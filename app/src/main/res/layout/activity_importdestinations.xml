@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".ImportDestinationsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorSurface"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@android:drawable/ic_menu_revert"
+            app:title="Destination Hub Manager"
+            app:titleCentered="true"
+            app:titleTextColor="@color/colorOnSurface" />
+
+        <LinearLayout
+            android:id="@+id/layoutSteps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="16dp"
+            android:gravity="center">
+            <View android:id="@+id/step1" android:layout_width="0dp" android:layout_height="4dp" android:layout_weight="1" android:background="@color/colorPrimary" android:layout_marginEnd="4dp" />
+            <View android:id="@+id/step2" android:layout_width="0dp" android:layout_height="4dp" android:layout_weight="1" android:background="@color/colorSurfaceVariant" android:layout_marginHorizontal="4dp" />
+            <View android:id="@+id/step3" android:layout_width="0dp" android:layout_height="4dp" android:layout_weight="1" android:background="@color/colorSurfaceVariant" android:layout_marginHorizontal="4dp" />
+            <View android:id="@+id/step4" android:layout_width="0dp" android:layout_height="4dp" android:layout_weight="1" android:background="@color/colorSurfaceVariant" android:layout_marginStart="4dp" />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardStep1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/colorSurface">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Choose Import Method"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp"/>
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/toggleGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:singleSelection="true"
+                        app:selectionRequired="true"
+                        app:checkedButton="@+id/btnModeManual">
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnModeManual" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Manual" android:textSize="12sp" android:paddingHorizontal="4dp" android:minHeight="0dp" android:paddingVertical="8dp" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnModeJson" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Raw Text" android:textSize="12sp" android:paddingHorizontal="4dp" android:minHeight="0dp" android:paddingVertical="8dp" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnModeAi" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="AI Assist" android:textSize="12sp" android:paddingHorizontal="4dp" android:minHeight="0dp" android:paddingVertical="8dp" />
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Manual Card with Map Selection -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardManualForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="visible"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/colorSurface">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Create New Destination"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginBottom="24dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Destination Name"
+                        android:layout_marginBottom="16dp">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etManualName" android:layout_width="match_parent" android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="University"
+                        android:layout_marginBottom="24dp">
+                        <AutoCompleteTextView android:id="@+id/spinnerManualUni" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="none" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Coordinate Entry Options -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPickOnMap"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="Select on Google Maps"
+                        app:icon="@android:drawable/ic_dialog_map"
+                        android:layout_marginBottom="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="24dp">
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Latitude"
+                            android:layout_marginEnd="8dp">
+                            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etManualLat" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal|numberSigned" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Longitude"
+                            android:layout_marginStart="8dp">
+                            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etManualLng" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal|numberSigned" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSaveManual"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:text="Validate &amp; Add"
+                        app:cornerRadius="20dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mapContainer"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginBottom="24dp"
+                android:visibility="gone"
+                app:cardCornerRadius="28dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/colorPrimary">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <FrameLayout android:id="@+id/mapFrame" android:layout_width="match_parent" android:layout_height="match_parent" />
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="8dp"
+                        app:strokeWidth="0dp">
+                        <androidx.appcompat.widget.SearchView
+                            android:id="@+id/mapSearchView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:iconifiedByDefault="false"
+                            app:queryHint="Search for a destination..." />
+                    </com.google.android.material.card.MaterialCardView>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAiImport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/colorSurface">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+                    <TextView android:id="@+id/tvAiTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AI Assisted Import" android:textSize="20sp" android:textStyle="bold" android:textColor="@color/colorPrimary" />
+                    <TextView android:id="@+id/tvAiSubTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Powered by Gemini 3.1 Flash Lite" android:textSize="12sp" android:alpha="0.7" android:layout_marginBottom="24dp"/>
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Paste Data Here"
+                        app:boxCornerRadiusTopStart="20dp"
+                        app:boxCornerRadiusTopEnd="20dp"
+                        app:boxCornerRadiusBottomStart="20dp"
+                        app:boxCornerRadiusBottomEnd="20dp">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etRawData" android:layout_width="match_parent" android:layout_height="250dp" android:gravity="top" android:inputType="textMultiLine" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnValidate" android:layout_width="match_parent" android:layout_height="64dp" android:layout_marginTop="20dp" android:text="Process Data" app:icon="@android:drawable/ic_menu_search" app:cornerRadius="20dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/layoutValidation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/colorSurfaceVariant"
+                app:cardBackgroundColor="@color/colorSurface">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+                    <TextView android:id="@+id/tvValidationHeading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Validation Preview" android:textSize="18sp" android:textStyle="bold" />
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2"
+                        android:layout_marginTop="16dp">
+                        <TextView android:id="@+id/tvStatTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Total: 0" android:textSize="14sp" android:layout_margin="4dp"/>
+                        <TextView android:id="@+id/tvStatValid" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Valid: 0" android:textSize="14sp" android:layout_margin="4dp" android:textColor="@color/status_green"/>
+                        <TextView android:id="@+id/tvStatDuplicates" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dups: 0" android:textSize="14sp" android:layout_margin="4dp" android:textColor="@color/status_orange"/>
+                        <TextView android:id="@+id/tvStatErrors" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Errs: 0" android:textSize="14sp" android:layout_margin="4dp" android:textColor="@color/status_red"/>
+                    </GridLayout>
+                    <HorizontalScrollView android:id="@+id/scrollPreview" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:background="#F8F9FA">
+                        <TableLayout android:id="@+id/tablePreview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" />
+                    </HorizontalScrollView>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnConfirmUpload" android:layout_width="match_parent" android:layout_height="64dp" android:layout_marginTop="24dp" android:text="Confirm &amp; Upload" app:cornerRadius="20dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/layoutProcessing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="32dp"
+                    android:gravity="center">
+                    <com.google.android.material.progressindicator.CircularProgressIndicator android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" app:indicatorSize="64dp" />
+                    <TextView android:id="@+id/tvProgressStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Processing..." android:layout_marginTop="24dp" android:textStyle="bold" />
+                    <com.google.android.material.progressindicator.LinearProgressIndicator android:id="@+id/linearProgress" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:visibility="gone" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCompletion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#E8F5E9">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="32dp"
+                    android:gravity="center">
+                    <ImageView android:layout_width="80dp" android:layout_height="80dp" android:src="@android:drawable/checkbox_on_background" app:tint="@color/status_green" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Success" android:textSize="22sp" android:textStyle="bold" android:layout_marginTop="24dp" android:textColor="@color/status_green" />
+                    <TextView android:id="@+id/tvImportSummary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:layout_marginTop="8dp" android:gravity="center" android:alpha="0.8" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnUndo" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="Undo" android:textColor="@color/status_red" app:strokeColor="@color/status_red" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="match_parent" android:layout_height="100dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Compatibility Anchors (Cleaned up) -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        tools:ignore="UselessLeaf">
+        <RadioGroup android:id="@+id/rgImportMethod" android:layout_width="0dp" android:layout_height="0dp" />
+        <RadioButton android:id="@+id/rbWriteMode" android:layout_width="0dp" android:layout_height="0dp" />
+        <RadioButton android:id="@+id/rbFileMode" android:layout_width="0dp" android:layout_height="0dp" />
+        <RadioButton android:id="@+id/rbAiMode" android:layout_width="0dp" android:layout_height="0dp" />
+        <TextView android:id="@+id/tvStep2Title" android:layout_width="0dp" android:layout_height="0dp" />
+        <TextView android:id="@+id/tvCharCount" android:layout_width="0dp" android:layout_height="0dp" />
+        <Button android:id="@+id/btnUploadFile" android:layout_width="0dp" android:layout_height="0dp" />
+        <TextView android:id="@+id/tvValidationDetails" android:layout_width="0dp" android:layout_height="0dp" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

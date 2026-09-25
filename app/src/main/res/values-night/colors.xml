@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- GUSA Premium Material 3 Dark Palette -->
+
+    <color name="colorPrimary">#C5CAE9</color>
+    <color name="colorOnPrimary">#1A237E</color>
+    <color name="colorPrimaryContainer">#303F9F</color>
+    <color name="colorOnPrimaryContainer">#E8EAF6</color>
+
+    <color name="colorSecondary">#9FA8DA</color>
+    <color name="colorOnSecondary">#1A237E</color>
+    <color name="colorSecondaryContainer">#3949AB</color>
+    <color name="colorOnSecondaryContainer">#E8EAF6</color>
+
+    <color name="colorTertiary">#80CBC4</color>
+    <color name="colorOnTertiary">#004D40</color>
+    <color name="colorTertiaryContainer">#00796B</color>
+    <color name="colorOnTertiaryContainer">#E0F2F1</color>
+
+    <color name="colorBackground">#1B1B1F</color>
+    <color name="colorOnBackground">#E3E2E6</color>
+    <color name="colorSurface">#1B1B1F</color>
+    <color name="colorOnSurface">#E3E2E6</color>
+    <color name="colorSurfaceVariant">#44464F</color>
+    <color name="colorOnSurfaceVariant">#C5C6D0</color>
+
+    <color name="colorOutline">#8F9099</color>
+    <color name="colorError">#F2B8B5</color>
+    <color name="colorOnError">#601410</color>
+
+    <!-- Status Colors (Desaturated for Dark Mode) -->
+    <color name="status_green">#81C784</color>
+    <color name="status_red">#E57373</color>
+    <color name="status_orange">#FFB74D</color>
+    <color name="status_blue">#64B5F6</color>
+    <color name="status_grey">#BDBDBD</color>
+</resources>

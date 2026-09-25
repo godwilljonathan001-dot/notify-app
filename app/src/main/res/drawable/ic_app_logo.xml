@@ -1,0 +1,31 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Rounded Square Background -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M20,0 L80,0 A20,20 0 0 1 100,20 L100,80 A20,20 0 0 1 80,100 L20,100 A20,20 0 0 1 0,80 L0,20 A20,20 0 0 1 20,0 Z" />
+
+    <!-- Bell -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M50,78c3,0 5,-2 5,-5H45C45,76 47,78 50,78zM65,68V53c0,-8 -5,-15 -13,-17v-2c0,-1 -1,-2 -2,-2s-2,1 -2,2v2C38,38 33,45 33,53v15l-5,5v3h44v-3L65,68z" />
+
+    <!-- Waves Left -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M25,53c0,-5.5 2.2,-10.5 5.8,-14.1l-2.1,-2.1c-4.2,4.2 -6.7,10 -6.7,16.2s2.5,12 6.7,16.2l2.1,-2.1C27.2,63.5 25,58.5 25,53z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M17,53c0,-8.3 3.4,-15.8 8.8,-21.2l-2.1,-2.1c-6,6 -9.7,14.2 -9.7,23.3s3.7,17.3 9.7,23.3l2.1,-2.1C20.4,68.8 17,61.3 17,53z" />
+
+    <!-- Waves Right -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M75,53c0,5.5 -2.2,10.5 -5.8,14.1l2.1,2.1c4.2,-4.2 6.7,-10 6.7,-16.2s-2.5,-12 -6.7,-16.2l-2.1,2.1C72.8,42.5 75,47.5 75,53z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M83,53c0,8.3 -3.4,15.8 -8.8,21.2l2.1,2.1c6,-6 9.7,-14.2 9.7,-23.3s-3.7,-17.3 -9.7,-23.3l-2.1,-2.1C79.6,68.8 83,61.3 83,53z" />
+</vector>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- GUSA Premium Material 3 Palette -->
+    
+    <!-- Primary: Deep Indigo -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorPrimaryContainer">#E8EAF6</color>
+    <color name="colorOnPrimaryContainer">#1A237E</color>
+    
+    <!-- Secondary: Professional Slate -->
+    <color name="colorSecondary">#5C6BC0</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorSecondaryContainer">#E8EAF6</color>
+    <color name="colorOnSecondaryContainer">#283593</color>
+    
+    <!-- Tertiary: Soft Teal -->
+    <color name="colorTertiary">#26A69A</color>
+    <color name="colorOnTertiary">#FFFFFF</color>
+    <color name="colorTertiaryContainer">#E0F2F1</color>
+    <color name="colorOnTertiaryContainer">#004D40</color>
+    
+    <!-- Surface & Background -->
+    <color name="colorBackground">#F8F9FF</color>
+    <color name="colorOnBackground">#1B1B1F</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#1B1B1F</color>
+    <color name="colorSurfaceVariant">#E1E2EC</color>
+    <color name="colorOnSurfaceVariant">#44464F</color>
+    
+    <!-- Outline & Error -->
+    <color name="colorOutline">#757780</color>
+    <color name="colorError">#B3261E</color>
+    <color name="colorOnError">#FFFFFF</color>
+    <color name="colorErrorContainer">#F9DEDC</color>
+    <color name="colorOnErrorContainer">#410E0B</color>
+
+    <!-- Status Colors -->
+    <color name="status_green">#388E3C</color>
+    <color name="status_red">#D32F2F</color>
+    <color name="status_orange">#F57C00</color>
+    <color name="status_blue">#1976D2</color>
+    <color name="status_grey">#616161</color>
+    
+    <!-- Basic Palette -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray_light">#F5F5F5</color>
+    <color name="gray_dark">#424242</color>
+
+    <!-- Legacy support -->
+    <color name="primary">#3F51B5</color>
+    <color name="primary_dark">#303F9F</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+</resources>

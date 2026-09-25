@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "activeTrips": {
+      ".read": "auth != null",
+      "$busId": {
+        ".write": "auth != null && (!data.exists() || data.child('driverUid').val() === auth.uid)",
+        "latitude": { ".validate": "newData.isNumber()" },
+        "longitude": { ".validate": "newData.isNumber()" },
+        "driverUid": { ".validate": "newData.val() === auth.uid" }
+      }
+    }
+  }
+}

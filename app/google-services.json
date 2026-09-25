@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "799262063078",
+    "firebase_url": "https://gusa-90343-default-rtdb.firebaseio.com",
+    "project_id": "gusa-90343",
+    "storage_bucket": "gusa-90343.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799262063078:android:c33e6e5a677707314f7e27",
+        "android_client_info": {
+          "package_name": "com.example.gusa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799262063078-7pkhis31kcp5upveqi80l7t8iqfru9rt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "REMOVED_API_KEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799262063078-7pkhis31kcp5upveqi80l7t8iqfru9rt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
